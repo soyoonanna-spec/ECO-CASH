@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5faef">
+<title>ECO-CASH | 제1회 호연고 해커톤</title>
+<style>
+:root{--green:#287a45;--deep:#185c35;--lime:#dff2c9;--pale:#f4faee;--mint:#eaf6e7;--ink:#203329;--muted:#65766a;--line:#dce8d8;--white:#fff;--orange:#fff1d9;--red:#fff0ed;--shadow:0 8px 28px rgba(34,83,48,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font-family:system-ui,-apple-system,"Malgun Gothic","맑은 고딕",sans-serif;font-size:16px;line-height:1.55}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #8acb76;outline-offset:2px}.app{min-height:100vh}.topbar{height:62px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 16px;position:sticky;top:0;z-index:10}.brand{display:flex;align-items:center;gap:9px;font-weight:900;color:var(--deep);font-size:20px;letter-spacing:-.6px}.brand-mark{width:34px;height:34px;border-radius:12px;background:var(--lime);display:grid;place-items:center;font-size:20px}.top-actions{display:flex;align-items:center;gap:8px}.points-pill{border:1px solid var(--line);background:var(--pale);border-radius:99px;padding:7px 11px;font-size:13px;font-weight:800;color:var(--deep)}.menu-toggle{width:42px;height:42px;border:0;background:var(--mint);border-radius:12px;color:var(--deep);font-size:21px}.nav{display:none;position:absolute;top:61px;left:0;right:0;background:white;padding:10px 16px 14px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}.nav.open{display:grid;grid-template-columns:1fr 1fr;gap:7px}.nav button{border:0;background:#f5f9f2;color:var(--ink);border-radius:11px;padding:11px 8px;font-size:13px;font-weight:700}.nav button.active{background:var(--green);color:white}.main{max-width:1120px;margin:0 auto;padding:25px 16px 100px}.screen{display:none}.screen.active{display:block}.hero{background:linear-gradient(135deg,#e6f5d8,#f8fbf3);border:1px solid #d7e9ca;border-radius:22px;padding:23px 20px;position:relative;overflow:hidden}.hero:after{content:"🌳";position:absolute;right:13px;bottom:-13px;font-size:92px;opacity:.17}.eyebrow{color:var(--green);font-size:12px;font-weight:900;letter-spacing:1px}.hero h1{font-size:32px;line-height:1.2;margin:8px 0 10px;letter-spacing:-1.2px;max-width:650px}.hero p{margin:0;color:#53675a;font-size:15px;max-width:580px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:25px 0 13px}.section-head h2{font-size:21px;margin:0;letter-spacing:-.5px}.section-head p{font-size:13px;color:var(--muted);margin:3px 0 0}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:var(--shadow)}.profile-row{display:flex;align-items:center;gap:13px;margin-top:16px}.avatar{width:46px;height:46px;border-radius:15px;background:var(--lime);display:grid;place-items:center;font-size:24px}.profile-info{min-width:0;flex:1}.profile-info strong{display:block}.sub{color:var(--muted);font-size:12px}.btn{min-height:46px;border:0;border-radius:13px;padding:11px 16px;background:var(--green);color:white;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{background:var(--deep)}.btn.secondary{background:var(--mint);color:var(--deep)}.btn.ghost{background:white;border:1px solid var(--line);color:var(--deep)}.btn:disabled{opacity:.45;cursor:not-allowed}.btn.full{width:100%}.search-wrap{display:flex;gap:8px}.search-wrap input,.field{width:100%;min-height:48px;border:1px solid #cdddc9;border-radius:13px;padding:11px 13px;background:white;color:var(--ink)}.search-wrap .btn{flex-shrink:0}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chip{border:1px solid var(--line);background:white;color:var(--deep);border-radius:99px;padding:8px 13px;font-size:13px;font-weight:700;min-height:40px}.chip:hover{background:var(--mint)}.grid{display:grid;grid-template-columns:1fr;gap:12px}.item-card{border:1px solid var(--line);background:white;border-radius:16px;padding:15px;text-align:left;display:flex;align-items:center;gap:13px;min-height:82px;color:var(--ink)}.item-card:hover{border-color:#86bd7c;background:#fbfef9}.item-icon{width:48px;height:48px;border-radius:15px;background:var(--mint);display:grid;place-items:center;font-size:25px;flex-shrink:0}.item-card strong{display:block}.item-card small{color:var(--muted)}.item-card .arrow{margin-left:auto;color:var(--green);font-size:20px}.notice{padding:12px 14px;background:#f1f7ed;border:1px solid var(--line);border-radius:13px;color:#4e6554;font-size:13px;margin-top:14px}.warning{background:var(--orange);border-color:#f0dfbd;color:#765622}.error{background:var(--red);border-color:#f2d2cc;color:#8b4035}.guide-top{display:flex;align-items:center;gap:13px;margin-bottom:16px}.guide-icon{width:60px;height:60px;border-radius:18px;background:var(--mint);display:grid;place-items:center;font-size:32px}.guide-top h1{font-size:27px;margin:0}.guide-top p{margin:2px 0 0;color:var(--muted);font-size:13px}.steps{display:grid;gap:10px;counter-reset:step}.step{display:flex;gap:12px;padding:13px;background:#f8fbf6;border-radius:13px}.step b{width:28px;height:28px;flex:0 0 28px;background:var(--lime);color:var(--deep);border-radius:50%;display:grid;place-items:center}.step p{margin:2px 0 0}.tag{display:inline-block;background:var(--mint);color:var(--deep);border-radius:99px;padding:5px 9px;font-size:12px;font-weight:800}.quiz-option{display:flex;align-items:center;gap:10px;border:1px solid var(--line);background:white;border-radius:13px;padding:13px;margin-top:9px;min-height:50px;text-align:left;width:100%;color:var(--ink)}.quiz-option.selected{border:2px solid var(--green);background:#f2faed}.quiz-option.correct{border-color:#4c9b58;background:#eff9ee}.quiz-option.wrong{border-color:#d77b68;background:#fff3f0}.feedback{padding:15px;border-radius:14px;margin-top:13px}.feedback.good{background:#edf8eb;border:1px solid #cce6c7}.feedback.bad{background:#fff2ef;border:1px solid #f0d1ca}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:#f5faf1;border-radius:14px;padding:15px}.stat strong{display:block;font-size:25px;color:var(--deep)}.stat span{font-size:12px;color:var(--muted)}.ledger{display:grid;gap:9px}.ledger-row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid #edf1ea}.ledger-row:last-child{border:0}.plus{font-weight:900;color:var(--green);white-space:nowrap}.empty{text-align:center;color:var(--muted);padding:28px 12px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day-name,.day{min-height:43px;display:grid;place-items:center;font-size:13px}.day-name{color:var(--muted);font-weight:800}.day{border:1px solid #edf1e9;background:#fff;border-radius:10px;position:relative}.day.today{border:2px solid var(--green)}.day.done:after{content:"✓";position:absolute;right:4px;top:0;color:var(--green);font-size:10px;font-weight:900}.day.muted{opacity:.35}.month-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.month-head button{border:0;background:var(--mint);border-radius:10px;width:38px;height:38px;color:var(--deep)}.craft-list{display:grid;gap:12px}.craft-card h3{margin:0 0 6px}.craft-card p{margin:5px 0;color:var(--muted);font-size:14px}.craft-card ol{padding-left:20px;margin:8px 0}.craft-card li{margin:5px 0}.shop-grid{display:grid;grid-template-columns:1fr;gap:12px}.shop-card .price{font-size:20px;color:var(--deep);font-weight:900;margin:9px 0}.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:7px 5px calc(7px + env(safe-area-inset-bottom));z-index:9}.bottom-nav button{border:0;background:transparent;color:#748176;font-size:11px;font-weight:700;padding:5px 2px;min-height:48px}.bottom-nav button span{display:block;font-size:19px;margin-bottom:1px}.bottom-nav button.active{color:var(--green)}.modal-backdrop{position:fixed;inset:0;background:#10271888;display:none;align-items:center;justify-content:center;padding:18px;z-index:20}.modal-backdrop.show{display:flex}.modal{background:white;border-radius:20px;padding:22px;width:min(100%,420px);box-shadow:var(--shadow)}.modal h2{margin:0 0 8px}.modal p{color:var(--muted);font-size:14px}.modal .field{margin:10px 0 13px}.toast{position:fixed;left:50%;bottom:88px;transform:translateX(-50%);background:#203329;color:white;border-radius:99px;padding:11px 17px;font-size:13px;z-index:30;display:none;max-width:calc(100% - 32px);text-align:center}.toast.show{display:block}.footer-note{font-size:12px;color:var(--muted);text-align:center;margin:25px 0 0}
+@media(min-width:600px){.main{padding-top:32px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:30px}.bottom-nav{display:none}.nav{display:flex!important;position:static;border:0;box-shadow:none;padding:0;gap:5px;background:transparent}.nav button{background:transparent;padding:9px 11px}.topbar{padding:0 32px}.menu-toggle{display:none}.main{padding-left:32px;padding-right:32px}}
+@media(min-width:900px){.topbar{height:72px;padding:0 64px}.brand{font-size:22px}.nav button{font-size:14px}.main{padding:38px 64px 70px}.hero h1{font-size:40px}.hero{padding:38px}.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.section-head h2{font-size:23px}.card{padding:21px}}
+@media(min-width:1200px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">🌱</span>ECO-CASH</div>
+  <nav class="nav" id="nav">
+    <button data-go="home" class="active">홈</button><button data-go="points">포인트</button><button data-go="calendar">환경 달력</button><button data-go="craft">새활용 만들기</button><button data-go="shop">교환 체험</button>
+  </nav>
+  <div class="top-actions"><div class="points-pill">🌿 <span id="topPoints">0</span>P</div><button class="menu-toggle" id="menuToggle" aria-label="메뉴 열기">☰</button></div>
+</header>
+<main class="main">
+<section class="screen active" id="screen-home">
+  <div class="notice" id="syncStatus" role="status" aria-live="polite" style="margin-top:0;margin-bottom:14px">☁️ 온라인 데이터 연결 준비 중…</div><div class="hero"><div class="eyebrow">제1회 호연고 해커톤 · 5모둠</div><h1>버리는 순간에도<br>지구를 생각해요 🌳</h1><p>올바른 분리배출 방법을 확인하고 퀴즈를 풀어 환경 포인트를 모아 보세요!</p></div>
+  <div class="card profile-row">
+    <div class="avatar">🌳</div><div class="profile-info"><strong id="profileName">환경 지킴이</strong><span class="sub" id="profileId">내 체험 카드 · ECO-0001</span></div><button class="btn secondary" id="editProfile">카드 설정</button>
+  </div>
+  <div class="section-head"><div><h2>무엇을 버리려고 하나요?</h2><p>물품을 검색하거나 아래에서 선택해 주세요.</p></div></div>
+  <div class="search-wrap"><input id="searchInput" type="search" placeholder="예: 페트병, 캔, 종이상자" aria-label="분리배출 물품 검색"><button class="btn" id="searchBtn">검색</button></div>
+  <div class="chips"><button class="chip" data-search="페트병">페트병</button><button class="chip" data-search="캔">캔</button><button class="chip" data-search="종이상자">종이상자</button><button class="chip" data-search="유리병">유리병</button></div>
+  <div id="searchMessage" aria-live="polite"></div>
+  <div class="section-head"><div><h2>분리배출 품목</h2><p>품목을 누르면 배출 방법을 확인할 수 있어요.</p></div></div>
+  <div class="grid" id="itemGrid"></div>
+  <div class="notice">💡 안내 정보는 교육용 예시입니다. 실제 배출 전에는 거주 지역의 분리배출 기준도 확인해 주세요.</div>
+</section>
+
+<section class="screen" id="screen-guide">
+  <button class="btn ghost" data-go="home">← 홈으로</button>
+  <div class="section-head"><div><span class="tag">분리배출 안내</span><h2 id="guideTitle" style="margin-top:8px">품목 안내</h2></div></div>
+  <div id="guideContent"></div>
+  <div class="card" style="margin-top:14px"><strong>분리배출을 마쳤나요?</strong><p class="sub">안내를 확인한 뒤 퀴즈에 참여해 보세요.</p><button class="btn full" id="toQuiz">확인 퀴즈 풀기 →</button></div>
+</section>
+
+<section class="screen" id="screen-quiz">
+  <button class="btn ghost" data-go="guide">← 안내로</button>
+  <div class="section-head"><div><span class="tag">환경 지식 확인</span><h2 id="quizTitle" style="margin-top:8px">OX 퀴즈</h2><p>문제를 읽고 정답을 선택해 주세요.</p></div></div>
+  <div class="card"><div class="sub" id="quizCount">1 / 2</div><h3 id="questionText" style="font-size:19px;margin:10px 0 15px"></h3><div id="options"></div><div id="quizFeedback" aria-live="polite"></div><button class="btn full" id="checkAnswer" style="margin-top:14px">정답 확인</button><button class="btn full" id="nextQuestion" style="margin-top:9px;display:none">다음 문제</button></div>
+</section>
+
+<section class="screen" id="screen-result">
+  <div class="hero"><div class="eyebrow">QUIZ RESULT</div><h1 id="resultTitle">참 잘했어요!</h1><p id="resultText">분리배출 지식을 확인했어요.</p></div>
+  <div class="card" style="margin-top:15px;text-align:center"><div style="font-size:42px">🌟</div><h2 id="resultPoints">+10P</h2><p class="sub" id="resultDetail">체험 포인트가 적립되었습니다.</p><button class="btn full" data-go="points">내 포인트 확인하기</button><button class="btn secondary full" style="margin-top:9px" data-go="home">다른 품목 확인하기</button></div>
+</section>
+
+<section class="screen" id="screen-points">
+  <div class="section-head"><div><span class="tag">MY ECO WALLET</span><h2 style="margin-top:8px">내 포인트</h2><p>이 기기에 저장된 체험 포인트입니다.</p></div></div>
+  <div class="card"><div class="sub">현재 보유 포인트</div><div style="font-size:38px;font-weight:900;color:var(--deep)"><span id="balance">0</span><small style="font-size:18px"> P</small></div><div class="stat-grid" style="margin-top:12px"><div class="stat"><strong id="earnedCount">0</strong><span>적립 완료 품목</span></div><div class="stat"><strong id="entryCount">0</strong><span>포인트 내역</span></div></div></div>
+  <div class="section-head"><div><h2>포인트 적립 내역</h2><p>적립 날짜와 사유를 확인할 수 있어요.</p></div><button class="btn ghost" id="resetData" style="font-size:12px">체험 데이터 초기화</button></div>
+  <div class="card"><div class="ledger" id="ledger"></div></div>
+  <div class="notice warning">⚠️ 현재 포인트는 실제 현금이나 상품권이 아닙니다. 브라우저 저장 공간을 지우면 기록이 사라질 수 있습니다.</div>
+</section>
+
+<section class="screen" id="screen-calendar">
+  <div class="section-head"><div><span class="tag">MY GREEN DAYS</span><h2 style="margin-top:8px">환경 미션 달력</h2><p>퀴즈를 완료한 날짜가 달력에 표시돼요.</p></div></div>
+  <div class="card"><div class="month-head"><button id="prevMonth" aria-label="이전 달">‹</button><strong id="monthLabel"></strong><button id="nextMonth" aria-label="다음 달">›</button></div><div class="calendar" id="calendarGrid"></div><div class="notice">✓ 표시가 있는 날은 환경 퀴즈를 완료한 날이에요.</div></div>
+  <div class="section-head"><div><h2>이번 달 활동</h2><p id="monthActivity">완료한 미션을 확인해 보세요.</p></div></div><div class="card" id="calendarActivity"></div>
+</section>
+
+<section class="screen" id="screen-craft">
+  <div class="section-head"><div><span class="tag">UPCYCLE IDEAS</span><h2 style="margin-top:8px">버리기 전에 다시 쓰기</h2><p>재활용품으로 만들 수 있는 생활 소품을 알아봐요.</p></div></div>
+  <div class="craft-list" id="craftList"></div>
+  <div class="notice warning">안전 안내: 가위 등 도구를 사용하는 활동은 보호자나 선생님의 도움을 받아 안전하게 진행하세요.</div>
+</section>
+
+<section class="screen" id="screen-shop">
+  <div class="section-head"><div><span class="tag">DEMO SHOP</span><h2 style="margin-top:8px">포인트 교환 체험</h2><p>포인트를 사용해 보는 시연용 화면입니다.</p></div></div>
+  <div class="card" style="margin-bottom:14px"><span class="sub">사용 가능한 체험 포인트</span><div style="font-size:30px;font-weight:900;color:var(--deep)"><span id="shopBalance">0</span>P</div></div>
+  <div class="shop-grid" id="shopGrid"></div>
+  <div class="notice warning">🚧 시연 전용입니다. 실제 쿠폰·상품권이 발급되거나 상품이 배송되지 않습니다. 교환 기록은 체험용으로만 저장됩니다.</div>
+</section>
+<p class="footer-note">ECO-CASH · 환경을 위한 작은 실천, 함께 만드는 큰 변화 🌱</p>
+</main>
+<div class="bottom-nav">
+  <button data-go="home" class="active"><span>🏠</span>홈</button><button data-go="points"><span>🌿</span>포인트</button><button data-go="calendar"><span>📅</span>달력</button><button data-go="craft"><span>♻️</span>새활용</button>
+</div>
+</div>
+
+<div class="modal-backdrop" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle">
+ <div class="modal"><h2 id="profileModalTitle">나의 환경 카드</h2><p>실명 대신 별명을 사용해 주세요. 이 카드는 현재 기기에서만 사용됩니다.</p><label for="nickname">사용할 별명</label><input class="field" id="nickname" maxlength="12" placeholder="예: 초록 지킴이"><div style="display:flex;gap:8px"><button class="btn full" id="saveProfile">저장하기</button><button class="btn ghost" id="closeProfile">닫기</button></div></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://tybpmbjzcpzddbcjfaoi.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_yCVFTAJGkiFZsrlTaZBjRg_kjHyTgJ7";
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+let remoteReady = false;
+let remoteSaveTimer = null;
+const ITEMS = [
+ {id:"pet",name:"페트병",icon:"🧴",category:"플라스틱",points:10,steps:["내용물을 깨끗하게 비워 주세요.","가능하면 물로 헹구고 라벨을 제거해 주세요.","뚜껑과 라벨은 지역 배출 기준에 따라 분리하고, 페트병은 가능한 경우 압착해 배출해요."],cautions:["내용물이 남아 있으면 재활용이 어려워질 수 있어요.","색깔이 있는 페트병과 투명 페트병의 배출 기준은 지역 안내를 확인해요."],questions:[{type:"OX",q:"페트병은 내용물을 비우고 라벨을 제거한 뒤 배출하는 것이 좋아요.",opts:["O","X"],a:0,why:"맞아요. 내용물을 비우고 라벨을 제거하면 재활용에 도움이 됩니다."},{type:"객관식",q:"페트병을 버리기 전에 먼저 해야 할 일로 알맞은 것은?",opts:["내용물을 그대로 둔다","내용물을 비우고 라벨을 제거한다","다른 쓰레기와 섞는다"],a:1,why:"내용물을 비우고 라벨을 제거한 뒤 배출하는 것이 기본 방법입니다."}],craft:"페트병 화분"}
+ ,{id:"can",name:"캔",icon:"🥫",category:"캔류",points:10,steps:["캔 안의 내용물을 완전히 비워 주세요.","가능하면 물로 가볍게 헹궈 주세요.","캔류로 분리해 배출해요."],cautions:["내용물이 남아 있지 않도록 해요.","부탄가스 등 가스 용기는 일반 캔과 배출 방법이 다르므로 별도 안내를 확인해요."],questions:[{type:"OX",q:"캔은 내용물을 비우고 가능한 경우 헹군 뒤 배출해요.",opts:["O","X"],a:0,why:"맞아요. 내용물을 비우고 가볍게 헹구면 재활용에 도움이 됩니다."},{type:"객관식",q:"일반 음료 캔의 올바른 배출 방법은?",opts:["내용물을 비우고 캔류로 배출","음료가 든 채로 배출","종이류에 넣기"],a:0,why:"일반 음료 캔은 내용물을 비운 뒤 캔류로 분리배출합니다."}],craft:"캔 연필꽂이"}
+ ,{id:"paper",name:"종이상자",icon:"📦",category:"종이류",points:10,steps:["상자에 붙은 테이프와 송장 등 이물질을 제거해요.","상자를 펼쳐 부피를 줄여 주세요.","젖거나 음식물이 묻지 않은 종이류로 배출해요."],cautions:["젖거나 기름·음식물이 묻은 종이는 재활용이 어려울 수 있어요.","코팅된 종이나 다른 재질이 붙은 부분은 분리배출 기준을 확인해요."],questions:[{type:"OX",q:"종이상자는 테이프를 제거하고 펼쳐서 배출하는 것이 좋아요.",opts:["O","X"],a:0,why:"맞아요. 테이프 등 다른 재질을 제거하고 펼치면 분리배출에 도움이 됩니다."},{type:"객관식",q:"종이상자를 버리기 전에 제거하면 좋은 것은?",opts:["종이 자체","테이프와 이물질","상자의 모든 종이"],a:1,why:"테이프와 송장 등 다른 재질을 제거하고 상자를 펼쳐 배출합니다."}],craft:"종이상자 정리함"}
+ ,{id:"glass",name:"유리병",icon:"🍾",category:"유리병류",points:10,steps:["병 안의 내용물을 비워 주세요.","가능하면 깨끗하게 헹궈 주세요.","유리병류로 분리배출해요."],cautions:["깨진 유리는 다칠 위험이 있으므로 일반 유리병 수거함에 넣지 말고 지역별 별도 배출 방법을 확인해요.","병뚜껑 등 다른 재질은 분리해 주세요."],questions:[{type:"OX",q:"깨진 유리는 일반 유리병과 똑같이 배출하면 돼요.",opts:["O","X"],a:1,why:"아니에요. 깨진 유리는 다칠 위험이 있어 일반 유리병과 구분하고 지역별 별도 배출 방법을 확인해야 합니다."},{type:"객관식",q:"유리병을 배출하기 전에 해야 할 일은?",opts:["내용물을 비우기","내용물을 채우기","종이상자에 넣기"],a:0,why:"내용물을 비우고 병뚜껑 등 다른 재질을 분리한 뒤 배출합니다."}],craft:"유리병 꽃병"}
+];
+const $=s=>document.querySelector(s);
+const KEY="ecoCashDraftV1";
+const today=()=>new Date().toISOString().slice(0,10);
+function fresh(){return {nickname:"환경 지킴이",cardId:"ECO-"+String(Math.floor(1000+Math.random()*9000)),points:0,earned:[],ledger:[],missions:[],exchanges:[]}}
+let state;
+try{state=JSON.parse(localStorage.getItem(KEY))||fresh()}catch(e){state=fresh()}
+function save(){
+  try{localStorage.setItem(KEY,JSON.stringify(state))}
+  catch(e){toast("저장 공간을 사용할 수 없어요. 브라우저 설정을 확인해 주세요.")}
+  renderHeader();
+  if(remoteReady){
+    clearTimeout(remoteSaveTimer);
+    remoteSaveTimer=setTimeout(syncStateToSupabase,350);
+  }
+}
+async function syncStateToSupabase(){
+  try{
+    const payload={card_id:state.cardId,state:state,updated_at:new Date().toISOString()};
+    const {error}=await supabaseClient.from("eco_cash_profiles").upsert(payload,{onConflict:"card_id"});
+    if(error) throw error;
+    setSyncMessage("☁️ 온라인 저장 완료");
+  }catch(error){
+    console.error("Supabase 저장 실패:",error);
+    setSyncMessage("⚠️ 온라인 저장 실패 · SQL 설정을 확인해 주세요");
+  }
+}
+function setSyncMessage(message){
+  let el=$("#syncStatus");
+  if(el) el.textContent=message;
+}
+async function initializeSupabase(){
+  setSyncMessage("☁️ 온라인 데이터 연결 중…");
+  try{
+    const {data,error}=await supabaseClient
+      .from("eco_cash_profiles")
+      .select("state")
+      .eq("card_id",state.cardId)
+      .maybeSingle();
+    if(error) throw error;
+    if(data && data.state){
+      state={...fresh(),...data.state};
+      try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}
+      renderHeader();renderPoints();renderCalendar();renderShop();
+      setSyncMessage("☁️ 온라인 데이터 불러오기 완료");
+    }else{
+      remoteReady=true;
+      await syncStateToSupabase();
+      setSyncMessage("☁️ 온라인 저장 사용 중");
+      return;
+    }
+    remoteReady=true;
+    setSyncMessage("☁️ 온라인 저장 사용 중");
+  }catch(error){
+    console.error("Supabase 연결 실패:",error);
+    remoteReady=false;
+    setSyncMessage("⚠️ 온라인 연결 실패 · 이 기기에만 저장 중");
+    toast("Supabase 연결에 실패했어요. 테이블과 RLS 설정을 확인해 주세요.");
+  }
+}
+function toast(msg){let t=$("#toast");t.textContent=msg;t.classList.add("show");clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),2400)}
+function renderHeader(){$("#topPoints").textContent=state.points;$("#profileName").textContent=state.nickname;$("#profileId").textContent="내 체험 카드 · "+state.cardId}
+function go(name){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));$("#screen-"+name).classList.add("active");document.querySelectorAll("[data-go]").forEach(b=>b.classList.toggle("active",b.dataset.go===name));$("#nav").classList.remove("open");window.scrollTo({top:0,behavior:"smooth"});if(name==="points")renderPoints();if(name==="calendar")renderCalendar();if(name==="shop")renderShop()}
+function renderItems(list=ITEMS){$("#itemGrid").innerHTML=list.length?list.map(i=>`<button class="item-card" data-item="${i.id}"><span class="item-icon">${i.icon}</span><span><strong>${i.name}</strong><small>${i.category} · 퀴즈 정답 ${i.points}P</small></span><span class="arrow">›</span></button>`).join(""):'<div class="card empty">검색 결과가 없어요.<br>다른 이름으로 다시 검색해 주세요.</div>'}
+let current=null,qi=0,selected=null,answered=false,quizCorrect=true;
+function findItem(id){return ITEMS.find(i=>i.id===id)}
+function openGuide(id){current=findItem(id);if(!current)return;$("#guideTitle").textContent=current.name+" 분리배출 방법";$("#guideContent").innerHTML=`<div class="card"><div class="guide-top"><div class="guide-icon">${current.icon}</div><div><h1>${current.name}</h1><p>${current.category} · 정답 시 ${current.points}P 체험 적립</p></div></div><h3>올바른 배출 방법</h3><div class="steps">${current.steps.map((s,n)=>`<div class="step"><b>${n+1}</b><p>${s}</p></div>`).join("")}</div><h3 style="margin-top:20px">주의사항</h3><ul>${current.cautions.map(c=>`<li style="margin:7px 0">${c}</li>`).join("")}</ul></div><div class="notice warning">품목별 배출 기준은 지자체와 수거 방식에 따라 다를 수 있어요.</div>`;go("guide")}
+function startQuiz(){if(!current){toast("먼저 품목을 선택해 주세요.");go("home");return}qi=0;selected=null;answered=false;quizCorrect=true;renderQuestion();go("quiz")}
+function renderQuestion(){let q=current.questions[qi];$("#quizTitle").textContent=q.type+" 퀴즈";$("#quizCount").textContent=(qi+1)+" / "+current.questions.length;$("#questionText").textContent=q.q;$("#options").innerHTML=q.opts.map((o,n)=>`<button class="quiz-option" data-opt="${n}"><b>${q.type==="OX"?(n===0?"⭕":"❌"):""+(n+1)+"."}</b>${o}</button>`).join("");$("#quizFeedback").innerHTML="";$("#checkAnswer").style.display="block";$("#checkAnswer").disabled=false;$("#nextQuestion").style.display="none";selected=null;answered=false}
+function checkAnswer(){if(selected===null){toast("답을 하나 선택해 주세요.");return}if(answered)return;let q=current.questions[qi];answered=true;let ok=selected===q.a;quizCorrect=quizCorrect&&ok;document.querySelectorAll(".quiz-option").forEach((b,n)=>{b.disabled=true;if(n===q.a)b.classList.add("correct");else if(n===selected)b.classList.add("wrong")});$("#quizFeedback").innerHTML=`<div class="feedback ${ok?"good":"bad"}"><strong>${ok?"정답이에요! 🎉":"아쉬워요. 정답을 확인해 보세요."}</strong><p style="margin:6px 0 0">${q.why}</p></div>`;$("#checkAnswer").style.display="none";$("#nextQuestion").style.display="block";$("#nextQuestion").textContent=qi===current.questions.length-1?"결과 확인하기":"다음 문제"}
+function finishQuiz(){let already=state.earned.includes(current.id);let awarded=quizCorrect&&!already;if(awarded){state.points+=current.points;state.earned.push(current.id);state.ledger.unshift({date:today(),reason:current.name+" 퀴즈 정답",points:current.points});state.missions.push({date:today(),item:current.name});save()}$("#resultTitle").textContent=quizCorrect?"참 잘했어요! 🌱":"다음에는 더 잘할 수 있어요!";$("#resultText").textContent=quizCorrect?"분리배출 방법을 잘 이해했어요.":"해설을 확인하고 올바른 방법을 다시 기억해 봐요.";$("#resultPoints").textContent=awarded?"+"+current.points+"P":(already&&quizCorrect?"이미 적립한 품목이에요":"+0P");$("#resultDetail").textContent=awarded?"체험 포인트가 적립되었습니다.":already?"같은 품목은 한 번만 적립할 수 있어요.":"이번에는 포인트가 적립되지 않았어요.";go("result")}
+function search(){let q=$("#searchInput").value.trim();if(!q){$("#searchMessage").innerHTML='<div class="notice error">검색할 물품 이름을 입력해 주세요.</div>';return}let list=ITEMS.filter(i=>(i.name+i.category).toLowerCase().includes(q.toLowerCase()));$("#searchMessage").innerHTML=list.length?`<div class="notice">‘${escapeHtml(q)}’ 검색 결과 ${list.length}개</div>`:`<div class="notice error">‘${escapeHtml(q)}’에 해당하는 품목이 없어요. 페트병, 캔, 종이상자, 유리병 중에서 검색해 주세요.</div>`;renderItems(list)}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderPoints(){$("#balance").textContent=state.points;$("#shopBalance").textContent=state.points;$("#earnedCount").textContent=state.earned.length;$("#entryCount").textContent=state.ledger.length;$("#ledger").innerHTML=state.ledger.length?state.ledger.map(x=>`<div class="ledger-row"><div><strong>${escapeHtml(x.reason)}</strong><div class="sub">${x.date}</div></div><div class="plus">+${x.points}P</div></div>`).join(""):'<div class="empty">아직 적립 내역이 없어요.<br>품목 퀴즈를 풀어 첫 포인트를 모아 보세요!</div>'}
+let calDate=new Date();function renderCalendar(){let y=calDate.getFullYear(),m=calDate.getMonth(),first=new Date(y,m,1),last=new Date(y,m+1,0);$("#monthLabel").textContent=`${y}년 ${m+1}월`;let html=["일","월","화","수","목","금","토"].map(d=>`<div class="day-name">${d}</div>`).join("");for(let i=0;i<first.getDay();i++)html+='<div class="day muted"></div>';for(let d=1;d<=last.getDate();d++){let date=`${y}-${String(m+1).padStart(2,"0")}-${String(d).padStart(2,"0")}`,done=state.missions.some(x=>x.date===date);html+=`<div class="day ${done?"done":""} ${date===today()?"today":""}">${d}</div>`}$("#calendarGrid").innerHTML=html;let entries=state.missions.filter(x=>x.date.startsWith(`${y}-${String(m+1).padStart(2,"0")}`));$("#monthActivity").textContent=`이번 달 미션 ${entries.length}회 완료`;$("#calendarActivity").innerHTML=entries.length?entries.map(x=>`<div class="ledger-row"><div><strong>${escapeHtml(x.item)} 분리배출 퀴즈 완료</strong><div class="sub">${x.date}</div></div><span>🌱</span></div>`).join(""):'<div class="empty">이번 달 완료한 미션이 아직 없어요.</div>'}
+const CRAFTS=[{item:"페트병",title:"페트병 미니 화분",icon:"🪴",materials:"깨끗한 페트병, 흙, 작은 식물",steps:["페트병을 깨끗이 씻고 완전히 말려요.","자르는 작업은 어른의 도움을 받아 윗부분을 잘라요.","아래쪽에 흙을 담고 작은 식물을 심어요."]},{item:"캔",title:"캔 연필꽂이",icon:"✏️",materials:"깨끗한 빈 캔, 종이 또는 천 장식",steps:["캔의 내용물을 비우고 깨끗하게 씻어요.","날카로운 가장자리가 없는지 어른과 함께 확인해요.","겉면에 종이나 천을 붙여 꾸며요."]},{item:"종이상자",title:"종이상자 책상 정리함",icon:"🗂️",materials:"작은 종이상자, 색종이, 풀",steps:["상자에 붙은 테이프와 이물질을 제거해요.","상자 크기에 맞춰 색종이를 준비해요.","겉면을 꾸미고 필기구나 작은 물건을 정리해요."]},{item:"유리병",title:"유리병 꽃병",icon:"🌼",materials:"깨끗한 빈 유리병, 리본이나 끈",steps:["유리병을 깨끗하게 씻고 말려요.","병 입구와 표면에 금이 간 곳이 없는지 확인해요.","병 바깥에 끈을 둘러 장식하고 꽃을 꽂아요."]}];
+$("#craftList").innerHTML=CRAFTS.map(c=>`<article class="card craft-card"><div style="font-size:34px">${c.icon}</div><h3>${c.title}</h3><span class="tag">${c.item} 새활용</span><p><b>준비물</b> · ${c.materials}</p><b>만드는 과정</b><ol>${c.steps.map(s=>`<li>${s}</li>`).join("")}</ol></article>`).join("");
+const SHOP=[{name:"초록 씨앗 배지",price:20,icon:"🌱",desc:"환경 실천을 기념하는 가상 배지"},{name:"에코 응원 쿠폰",price:30,icon:"🎟️",desc:"시연용 가상 쿠폰"},{name:"나무 심기 응원권",price:50,icon:"🌳",desc:"환경 보호를 응원하는 가상 교환권"}];
+function renderShop(){$("#shopBalance").textContent=state.points;$("#shopGrid").innerHTML=SHOP.map((p,n)=>`<div class="card shop-card"><div style="font-size:34px">${p.icon}</div><h3>${p.name}</h3><p class="sub">${p.desc}</p><div class="price">${p.price}P</div><button class="btn full" data-buy="${n}" ${state.points<p.price?"disabled":""}>체험 교환하기</button></div>`).join("")}
+function buy(n){let p=SHOP[n];if(!p)return;if(state.points<p.price){toast("포인트가 부족해요.");return}if(!confirm(`${p.name}을(를) ${p.price}P로 체험 교환할까요?\n실제 상품은 지급되지 않습니다.`))return;state.points-=p.price;state.exchanges.unshift({date:today(),name:p.name,points:p.price});state.ledger.unshift({date:today(),reason:p.name+" (체험 교환)",points:-p.price});save();renderShop();toast("체험 교환이 완료되었어요. 실제 상품은 지급되지 않습니다.");}
+document.addEventListener("click",e=>{let goBtn=e.target.closest("[data-go]");if(goBtn){go(goBtn.dataset.go);return}let item=e.target.closest("[data-item]");if(item){openGuide(item.dataset.item);return}let opt=e.target.closest("[data-opt]");if(opt&&!answered){selected=Number(opt.dataset.opt);document.querySelectorAll(".quiz-option").forEach(b=>b.classList.toggle("selected",b===opt));return}let chip=e.target.closest("[data-search]");if(chip){$("#searchInput").value=chip.dataset.search;search();return}let buyBtn=e.target.closest("[data-buy]");if(buyBtn){buy(Number(buyBtn.dataset.buy));return}});
+$("#searchBtn").addEventListener("click",search);$("#searchInput").addEventListener("keydown",e=>{if(e.key==="Enter")search()});$("#toQuiz").addEventListener("click",startQuiz);$("#checkAnswer").addEventListener("click",checkAnswer);$("#nextQuestion").addEventListener("click",()=>{if(qi<current.questions.length-1){qi++;renderQuestion()}else finishQuiz()});
+$("#menuToggle").addEventListener("click",()=>$("#nav").classList.toggle("open"));
+$("#editProfile").addEventListener("click",()=>{$("#nickname").value=state.nickname;$("#profileModal").classList.add("show");$("#nickname").focus()});$("#closeProfile").addEventListener("click",()=>$("#profileModal").classList.remove("show"));$("#saveProfile").addEventListener("click",()=>{let n=$("#nickname").value.trim();if(!n){toast("별명을 입력해 주세요.");return}if(n.length>12){toast("별명은 12자 이내로 입력해 주세요.");return}state.nickname=n;save();$("#profileModal").classList.remove("show");toast("환경 카드가 저장되었어요.")});
+$("#prevMonth").addEventListener("click",()=>{calDate=new Date(calDate.getFullYear(),calDate.getMonth()-1,1);renderCalendar()});$("#nextMonth").addEventListener("click",()=>{calDate=new Date(calDate.getFullYear(),calDate.getMonth()+1,1);renderCalendar()});
+$("#resetData").addEventListener("click",()=>{if(!confirm("현재 기기에 저장된 포인트와 활동 내역을 모두 초기화할까요?"))return;let nick=state.nickname,id=state.cardId;state=fresh();state.nickname=nick;state.cardId=id;save();renderPoints();toast("체험 데이터가 초기화되었어요.")});
+renderHeader();renderItems();renderPoints();initializeSupabase();
+</script>
+</body>
+</html>
